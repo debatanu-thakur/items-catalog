@@ -1,0 +1,15 @@
+.hide-child .no-child {
+    display: inline;
+}
+
+.hide-child:hover .no-child {
+    display: none;
+}
+.hide-child .another-child {
+    display: none;
+}
+
+.hide-child:hover .another-child {
+    display: inline;
+}
+

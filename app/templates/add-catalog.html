@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block content %}
+
+<section class="pa3 pa5-ns">
+    
+    <article class="hide-child relative ba b--black-20 mw7 center">
+    <h2 class="pa4 baskerville fw1">New Catalog</h2>
+    <form 
+        class="pa4 black-80"
+        action="{{url_for('add_catalog')}}"
+        enctype="multipart/form-data"
+        method="POST">
+        <input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+        <div class="measure">
+            <label for="image" class="f6 b db mb2">Image</label>
+            <input id="image" type="file" name="image" class="f6 link dim br1 pa2 mb2 db white bg-black">
+        </div>
+        <div class="measure">
+            <label for="name" class="f6 b db mb2">Name <span class="normal red">*</span></label>
+            <input id="name" name="name" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" size='30' aria-describedby="name-desc">
+            <small id="name-desc" class="f6 black-60 db mb2">Name of the new catalog.</small>
+        </div>
+        <input type='submit' class="f6 link dim br1 ph3 pv2 mb2 dib white bg-black pointer" value='Add'>
+        <a  class="f6 link dim br1 ba ph3 pv2 mb2 dib black"
+            href= '{{url_for("default")}}'>Cancel</a>
+    </form>
+    </article>
+</section>
+{% endblock %}

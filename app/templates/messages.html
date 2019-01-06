@@ -1,0 +1,13 @@
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="pa3 pa5-ns">
+        <ul class="list pl0 measure center">
+        {% for message in messages %}
+            <li class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30 red">
+                {{ message }}        
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endwith %}

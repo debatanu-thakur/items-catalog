@@ -1,0 +1,13 @@
+<html>
+<body>
+<h1>{{category.name}}</h1>
+<h3>{{item.name}}</h3>
+<form action= "{{url_for('deleteItem', category_name = category.name, item_id=item.id)}}" method = 'POST'>
+<p>Do you want to delete it?</p>
+<p>{{item.id}}. {{item.title}}</p>
+<input type='submit' value='Delete'>
+<a href= '{{url_for('catalog', category_name= category.name)}}'>Cancel</a>
+<input name=_csrf_token type=hidden value="{{ csrf_token() }}">
+</form>
+</body>
+</html>
